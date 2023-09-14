@@ -1,0 +1,71 @@
+<head>
+   <script src="./navigation.js"></script>
+   <script src="./footer.js"></script>
+   <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<div id="navigation-container"></div>
+<div class="contacts-container">
+   <div class="contacts-container-split">
+      <div class="left-side">
+         <div>
+             <img src="" id="loc-icon" width="20px">
+             <p>Location: Your dream bookstore street 5, Riga</p>
+         </div>
+         <div>
+             <img src="" id="phone-icon" width="20px">
+             <p>Phone: +371 12345678</p>
+         </div>
+         <div>
+             <img src="" id="email-icon" width="20px">
+             <p>Email: ansy@bookstore.com</p>
+         </div>
+     </div>
+      <div class="right-side">
+          <div class="contact-form-container">
+              <h1>Contact Us</h1>
+              <form action="/send-message" method="post">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required>
+   
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+   
+                  <label for="message">Message:</label>
+                  <textarea id="message" name="message" required></textarea>
+   
+                  <button type="submit">Send Message</button>
+              </form>
+          </div>
+      </div>
+   </div>
+</div>
+
+<div id="footer-container"></div>
+
+<script>
+    function submitFormAndRefresh() {
+    const confirmation = confirm("Are you sure you want to submit the form?");
+
+    if (confirmation) {
+        window.location.reload();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        submitFormAndRefresh();
+    });
+});
+
+fetch('../data.json')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('loc-icon').src = data.ContactUs.LocationIcon;
+    document.getElementById('phone-icon').src = data.ContactUs.PhoneIcon;
+    document.getElementById('email-icon').src = data.ContactUs.EmailIcon;
+})
+.catch(error => console.error('Error fetching data: ' + error));
+</script>

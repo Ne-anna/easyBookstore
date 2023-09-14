@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div id="navigation-container"></div>
+    <div class="main-page">
+        <p class="main-page-title" id="main-title"></p>
+        <img class="main-page-book-img" src="" id="book-image"/>
+    </div>
+    <div id="footer-container"></div>
+</body>
+</html>
+<script src="./components/navigation.js"></script>
+<script src="./components/footer.js"></script>
+<script>
+    fetch('./data.json')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('main-title').textContent = data.MainPageInfo.Text;
+            document.getElementById('book-image').src = data.MainPageInfo.Image;
+        })
+        .catch(error => console.error('Error fetching data: ' + error));
+</script>

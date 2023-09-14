@@ -1,0 +1,18 @@
+<head>
+
+</head>
+<div>
+    <div>Dummy data</div>
+    <h1 id="book-title"></h1>
+</div>
+<script>
+    // Retrieve book information from the query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    const book = {
+        title: queryParams.get('title'),
+        description: queryParams.get('description')
+    };
+    // Example: Display the book title
+    const titleElement = document.getElementById('book-title');
+    titleElement.textContent = book.title;
+</script>
