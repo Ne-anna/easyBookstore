@@ -1,0 +1,73 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./navigation.js"></script>
+    <script src="./footer.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+    <div id="navigation-container"></div>
+    <main class="movedown">
+        <div class="move-selector">
+            <div class="container mt-4">
+                <div class="input-group">
+                    <label for="genre" class="input-group-text">Type:</label>
+                    <select id="genre" class="form-select">
+                     <option value="all">All Genres</option>
+                     <option value="Story">Story</option>
+                     <option value="Song">Song</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Audio Books</h2>
+            <ul class="list-group" id="audio-book-list"></ul>
+        </div>
+    </main>
+    <div id="footer-container"></div>
+    
+    <script>
+        // Function to filter and display audio books based on the selected genre
+    async function filterAndDisplayAudioBooks() {
+        try {
+            const response = await fetch('../data.json');
+            const data = await response.json();
+
+            const selectedGenre = document.getElementById('genre').value;
+            const audioBooks = data.audioBooks;
+
+            const audioBookList = document.getElementById('audio-book-list');
+            audioBookList.innerHTML = ''; // Clear the existing list
+
+            audioBooks.forEach((book, index) => {
+                if (book.audioPath && (selectedGenre === 'all' || book.type === selectedGenre)) {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'list-group-item';
+
+                    const audioElement = document.createElement('audio');
+                    audioElement.controls = true;
+                    audioElement.src = book.audioPath;
+                    audioElement.title = book.title || `Audio Book ${index + 1}`;
+
+                    listItem.appendChild(audioElement);
+                    audioBookList.appendChild(listItem);
+                }
+            });
+        } catch (error) {
+            console.error('Error loading audio books:', error);
+        }
+    }
+
+    // Add an event listener to the genre dropdown to trigger filtering on change
+    document.getElementById('genre').addEventListener('change', filterAndDisplayAudioBooks);
+
+    // Initial display of all audio books
+    window.addEventListener('load', filterAndDisplayAudioBooks);
+    </script>
+<style>
+    .movedown {
+        padding-top: 10vh;
+    }
+</style>

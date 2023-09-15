@@ -23,7 +23,8 @@
           "cover": "../public/assets/img/bookC1.jpg",
           "author": "Nick Jones",
           "id": 1,
-          "Genre": "Drama",
+          "genre": "Drama",
+          "price": 16,
           "description": "Still haunted by the disappearance of his little sister Amy over twenty years ago, Joseph Bridgeman's life has fallen apart. When a friend talks him into seeing hypnotherapist Alexia Finch to help with his insomnia, Joseph accidentally discovers he can time travel. His first trip only takes him back a few minutes, but his new-found ability gives him something he hasn't felt for the longest time: hope.",
           "publishedYear": 1925
         },
@@ -32,7 +33,8 @@
           "cover": "../public/assets/img/bookC2.webp",
           "author": "Alisha Klapheke",
           "id": 2,
-          "Genre": "Sci-fi",
+          "genre": "Sci-fi",
+          "price": 6,
           "description": "Vahly, the last human, was born to fill that role and wield the magic necessary to fight the rising oceans and save the dragons. But Vahly is the worlds biggest disappointment. So far, she possesses no magic whatsoever.",
           "publishedYear": 1960
         },
@@ -41,7 +43,8 @@
           "cover": "../public/assets/img/bookC3.jpg",
           "author": "Maggie Stiefvater",
           "id": 3,
-          "Genre": "Romance",
+          "genre": "Romance",
+          "price": 17,
           "description": "Meanwhile, Sam has lived two lives: In winter, the frozen woods, the protection of the pack, and the silent company of a fearless girl. In summer, a few precious months of being human… until the cold makes him shift back again.",
           "publishedYear": 2009
         },
@@ -50,7 +53,8 @@
           "cover": "../public/assets/img/bookC4.webp",
           "author": "James Lopez",
           "id": 4,
-          "Genre": "Romance",
+          "genre": "Romance",
+          "price": 15,
           "description": "Imprisoned for weeks on an enemy starcraft, Franny, Court, and Mykal have sat with an unfathomable revelation. But as they fight to stay alive, escaping prison means trusting a young mysterious stranger. He knows everything about their lost histories, and when answers are not given freely, the bonded trio are forced to join a mission. One that will determine the fate of humanity.",
           "publishedYear": 1951
         },
@@ -59,7 +63,8 @@
           "cover": "../public/assets/img/bookC5.jpeg",
           "author": "Terry Crosby",
           "id": 5,
-          "Genre": "Sci-fi",
+          "genre": "Sci-fi",
+          "price": 10,
           "description": "After marrying her soul mate Simon Howard, Willa Fairfield prepares for the couples honeymoon. But, unbeknownst to her, it is not Simon who is sleeping beside her; it is Bartholomew the Dark, the legendary and dangerous witch. ",
           "publishedYear": 1813
         },
@@ -68,7 +73,8 @@
           "cover": "../public/assets/img/bookC6.jpg",
           "author": "Delia Owens",
           "id": 6,
-          "Genre": "Drama",
+          "genre": "Drama",
+          "price": 7,
           "description": "For years, rumors of the “Marsh Girl” have haunted Barkley Cove, a quiet town on the North Carolina coast. So in late 1969, when handsome Chase Andrews is found dead, the locals immediately suspect Kya Clark, the so-called Marsh Girl. But Kya is not what they say.",
           "publishedYear": 2015
         },
@@ -77,7 +83,7 @@
           "cover": "../public/assets/img/bookC7.jpg",
           "author": "Olivia Wilson",
           "id": 7,
-          "Genre": "Thriller",
+          "genre": "Thriller",
           "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
           "publishedYear": 1813
         },
@@ -86,7 +92,8 @@
           "cover": "../public/assets/img/bookC8.jpg",
           "author": "Panlo Coelho",
           "id": 8,
-          "Genre": "Drama",
+          "genre": "Drama",
+          "price": 10,
           "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
           "publishedYear": 1813
         },
@@ -95,7 +102,8 @@
           "cover": "../public/assets/img/bookC9.jpg",
           "author": "Katherine Moss",
           "id": 9,
-          "Genre": "Romance",
+          "genre": "Romance",
+          "price": 20,
           "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
           "publishedYear": 1813
         },
@@ -104,9 +112,32 @@
           "cover": "../public/assets/img/bookC10.webp",
           "author": "Olivia Wilson",
           "id": 10,
-          "Genre": "Thriller",
+          "genre": "Thriller",
+          "price": 22,
           "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
           "publishedYear": 1813
         }
+    ],
+    "audioBooks": [
+      {
+        "title": "The Three Questions by Leo Tolstoy",
+        "audioPath": "../public/assets/audio/Tolsty.mp4",
+        "type": "Story"
+      },
+      {
+        "title": "A wise woman",
+        "audioPath": "../public/assets/audio/AWise.mp4",
+        "type": "Story"
+      },
+      {
+        "title": "Moonlight Sonata",
+        "audioPath":  "../public/assets/audio/Moonl.mp3",
+        "type": "Song"
+      },
+      {
+        "title": "Bird sound",
+        "audioPath": "../public/assets/audio/Bird.mp3",
+        "type": "Song"
+      }
     ]
 }

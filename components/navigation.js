@@ -15,6 +15,7 @@ var navigationHTML = `
         </div>
         <div class="navigation__menu">
             <a class="menu__item" href="../components/book-list.html">Book list</a>
+            <a class="menu__item" href="../components/audio-books.html">Audio books</a>
             <a class="menu__item" href="../components/about.html">About</a>
             <a class="menu__item" href="../components/contacts.html">Contacts</a>
             <a class="menu__item" href="../components/order.html">Order</a>

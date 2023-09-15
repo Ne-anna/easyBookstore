@@ -9,53 +9,58 @@
 </head>
 
 <div id="navigation-container"></div>
-    <div class="background">
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-4 book-cover" id="book-cover-container"></div>
-                <div class="col-md-8 book-details" id="book-details-container">
-                    <h1 id="title"></h1>
-                    <h4 id="author"></h4>
-                    <h4 id="publishYear"></h4>
-                    <p id="description"></p>
-                    <button type="submit" id="orderButton">Order</button>
-                </div>
+<main>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-md-6 book-cover" id="book-cover-container"></div>
+            <div class="col-12 col-md-6 book-details" id="book-details-container">
+                <h1 id="title"></h1>
+                <h4 id="author"></h4>
+                <h4 id="publishYear"></h4>
+                <p id="description"></p>
+                <h4 id="price"></h4>
+                <button type="submit" id="orderButton">Order</button>
             </div>
         </div>
     </div>
+</main>
 <div id="footer-container"></div>
 
 <script>
-        const queryParams = new URLSearchParams(window.location.search);
-        const bookData = queryParams.get('data');
+    const queryParams = new URLSearchParams(window.location.search);
+    const bookData = queryParams.get('data');
 
-        const book = JSON.parse(decodeURIComponent(bookData));
+    const book = JSON.parse(decodeURIComponent(bookData));
 
-        const bookCoverContainer = document.getElementById('book-cover-container');
-        const bookDetailsContainer = document.getElementById('book-details-container');
+    const bookCoverContainer = document.getElementById('book-cover-container');
+    const bookDetailsContainer = document.getElementById('book-details-container');
         
-        const titleElement = document.getElementById('title');
-        titleElement.textContent = `${book.title}`;
+    const titleElement = document.getElementById('title');
+    titleElement.textContent = `${book.title}`;
 
-        const authorElement = document.getElementById('author');
-        authorElement.textContent = `${book.author}`;
+    const authorElement = document.getElementById('author');
+    authorElement.textContent = `${book.author}`;
 
-        const publishElement = document.getElementById('publishYear');
-        publishElement.textContent = `${book.publishedYear}`;
+    const publishElement = document.getElementById('publishYear');
+    publishElement.textContent = `${book.publishedYear}`;
 
-        const descriptionElement = document.getElementById('description');
-        descriptionElement.textContent = `${book.description}`;
+    const descriptionElement = document.getElementById('description');
+    descriptionElement.textContent = `${book.description}`;
 
-        const bookCoverElement = document.createElement('img');
-        bookCoverElement.src = `${book.cover}`;
-        bookCoverContainer.appendChild(bookCoverElement);
+    const priceElement = document.getElementById('price');
+    priceElement.textContent = `${book.price}€`;
 
-        const orderButton = document.getElementById('orderButton');
-        orderButton.addEventListener('click', () => {
-            //const orderUrl = `order.html?title=${encodeURIComponent(book.title)}&author=${encodeURIComponent(book.author)}&publishedYear=${encodeURIComponent(book.publishedYear)}&description=${encodeURIComponent(book.description)}&cover=${encodeURIComponent(book.cover)}`;
-            //window.location.href = orderUrl;
-            alert('Order button clicked');
-        });
+    const bookCoverElement = document.createElement('img');
+    bookCoverElement.src = `${book.cover}`;
+    bookCoverContainer.appendChild(bookCoverElement);
+
+    const orderButton = document.getElementById('orderButton');
+    orderButton.addEventListener('click', () => {
+        const storedBooks = JSON.parse(localStorage.getItem('books')) || [];
+        storedBooks.push(book);
+        localStorage.setItem('books', JSON.stringify(storedBooks));
+        window.location.href = 'order.html';
+    });
 </script>
 
 <style>
@@ -68,23 +73,19 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
-.background {
+main {
  background-color: black;
  margin-top: 6vh;
  height: 100%;
 }
 
-.book-cover {
-    max-width: 40%;
-}
-
-.book-cover img{
+.book-cover img {
     height: 70vh;
 }
 
 .book-details {
     max-width: 60%;
-    padding-left: 20px;
+    padding-left: 10vh;
 }
 
 .book-details h1 {

@@ -5,7 +5,8 @@
 </head>
 
 <div id="navigation-container"></div>
-<div class="contacts-container">
+
+<main class="contacts-container">
    <div class="contacts-container-split">
       <div class="left-side">
          <div>
@@ -30,17 +31,25 @@
    
                   <label for="email">Email:</label>
                   <input type="email" id="email" name="email" required>
+
+                  <label for="phone">Phone:</label>
+                  <input type="number" id="phone" name="phone" required>
    
                   <label for="message">Message:</label>
                   <textarea id="message" name="message" required></textarea>
-   
+
+                  <label for="news">Receive news</label>
+                  <input type="checkbox" id="news" class="checkbox">
+
+                  <label for="news">I agree with Privacy policy</label>
+                  <input type="radio" id="privacy" name="privacy" required>
+
                   <button type="submit">Send Message</button>
               </form>
           </div>
       </div>
    </div>
-</div>
-
+</main>
 <div id="footer-container"></div>
 
 <script>

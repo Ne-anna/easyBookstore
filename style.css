@@ -13,6 +13,7 @@
 }
 
 body {
+  background-color: var(--black) !important;
   display: flex;
   flex-direction: column;
   margin: 0;
