@@ -1,7 +1,7 @@
 {
     "MainPageInfo": {
         "Text": "Discover, Explore, and Get Lost in the World of Books!",
-        "Image": "./public/assets/img/book.jpg"
+        "Image": "../public/assets/img/book.jpg"
     },
     "NavigationInfo": {
         "Name": "Ansy Bookstore"

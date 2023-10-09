@@ -111,6 +111,22 @@ nav {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+.card-title {
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+  
+.move-selector {
+  padding-top: 5vh;
+}
+
+.myClass {
+padding: 4vh 5vh;
+padding-bottom: 12vh;
+}
+
 .navigation__menu {
   display: flex;
   position: fixed;
@@ -193,7 +209,7 @@ nav {
 
 .contacts-container {
   width: min(100%);
-  height: 100%;
+  height: 140%;
   display: flex;
   justify-content: center;
   align-items: center;
